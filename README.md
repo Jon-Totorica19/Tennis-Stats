@@ -69,5 +69,22 @@ Expected Output:
 - The analysis.py file contains only the core logic to keep calculations testable and reusable.
 - Outputs are written to results/ (created automatically)
 
+## Verification Checklist
+
+From the project root:
+
+```bash
+source .venv/bin/activate
+pytest -q
+python tool.py summary tennis_stats.csv
+python tool.py match tennis_stats.csv --date 2025-10-08
+python tool.py plot tennis_stats.csv --metric first_serve_pct
+ls -la results
+```
+You should see:
+- results/summary.json
+- results/first_serve_pct.png
+
+
 
   
